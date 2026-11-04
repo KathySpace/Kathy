@@ -54,9 +54,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 20px;
+      padding-bottom: 25px;
     }
 
     .player-title {
@@ -80,7 +80,14 @@
       gap: 12px;
       background: #0a0a0a;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .track-item:hover {
+      background: #151515;
+      border-color: rgba(255, 255, 255, 0.5);
     }
 
     .track-cover {
@@ -88,6 +95,7 @@
       height: 45px;
       object-fit: cover;
       border: 1px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
     }
 
     .track-info {
@@ -99,7 +107,7 @@
       width: 100%;
       max-width: 450px;
       filter: invert(1);
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     .section-title {
@@ -188,32 +196,33 @@
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Reproductor de música con portadas -->
+    <!-- Reproductor de música con portadas interactivas -->
     <div class="player-box">
       <div class="player-title">Soundtrack</div>
       
       <div class="playlist-container">
         <!-- Pista 1 -->
-        <div class="track-item">
+        <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3')">
           <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover">
           <div class="track-info">1. Tiësto - Red Lights</div>
         </div>
 
         <!-- Pista 2 -->
-        <div class="track-item">
+        <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3')">
           <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover">
           <div class="track-info">2. Elvis Presley - Are You Lonesome Tonight?</div>
         </div>
 
         <!-- Pista 3 -->
-        <div class="track-item">
+        <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3')">
           <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover">
           <div class="track-info">3. Loathe - Is It Really You?</div>
         </div>
       </div>
 
-      <audio controls>
-        <source src="cancion.mp3" type="audio/mpeg">
+      <!-- Reproductor HTML5 -->
+      <audio id="main-player" controls>
+        <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
       </audio>
     </div>
@@ -427,6 +436,16 @@
     </div>
 
   </div>
+
+  <script>
+    function playSong(songFile) {
+      const player = document.getElementById('main-player');
+      const source = document.getElementById('audio-source');
+      source.src = songFile;
+      player.load();
+      player.play();
+    }
+  </script>
 
 </body>
 </html>
