@@ -32,7 +32,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 25px;
     }
 
     .header-info {
@@ -83,7 +83,7 @@
     .separator {
       color: #666;
       letter-spacing: 3px;
-      margin: 15px 0;
+      margin: 10px 0;
       font-size: 12px;
       text-align: center;
     }
@@ -94,6 +94,7 @@
       line-height: 1.6;
       color: #cccccc;
       padding: 0 10px;
+      width: 100%;
     }
 
     .quote-multiline {
@@ -102,12 +103,13 @@
       line-height: 1.8;
       color: #cccccc;
       padding: 0 10px;
+      width: 100%;
     }
 
     .photo-grid {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 20px;
       width: 100%;
       align-items: center;
     }
@@ -115,14 +117,22 @@
     .photo-row {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       width: 100%;
       flex-wrap: wrap;
     }
 
+    .photo-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+
     .photo-frame {
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 6px;
+      padding: 5px;
       background: #0a0a0a;
       width: 210px;
       height: 260px;
@@ -149,12 +159,12 @@
 
   <div class="space-container">
     
-    <!-- Encabezado con el nombre de usuario -->
+    <!-- Encabezado -->
     <div class="header-info">
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Reproductor de música arriba -->
+    <!-- Reproductor de música -->
     <div class="player-box">
       <div class="player-title">Soundtrack</div>
       <audio controls>
@@ -209,12 +219,11 @@
 
       <div class="separator">:: ::</div>
 
-      <!-- Bloque de texto correcto que va antes del trío de fotos -->
       <div class="quote-box">
-        “_No quiero que me hagas el amor_ susurró, besándome el cuello_. Quiero que me abraces, que me des calor y que me quites el miedo que siento. Me estoy muriendo de terror”
+        “_No quiero que me hagas el amor_ susurró, besándome el cuello_.Quiero que me abraces, que me des calor y que me quites el miedo que siento. Me estoy muriendo de terror”
       </div>
 
-      <!-- Fotos 5, 6 y 7 (el trío exacto de la imagen) -->
+      <!-- Fotos 5, 6 y 7 -->
       <div class="photo-row">
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F26Q4G8Y5Uyay.jpg" alt="Foto 5"></div>
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FsFDGeotLV2Ge.jpg" alt="Foto 6"></div>
@@ -227,8 +236,22 @@
 
       <div class="separator">:: ::</div>
 
+      <!-- Frases ordenadas -->
       <div class="quote-box">
         “He intentado no pensar demasiado. He intentado ser natural”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Imagíname: no puedo existir si no me imaginas”
+      </div>
+
+      <!-- Trío de fotos en columna vertical con Foto 10 agregada -->
+      <div class="photo-column">
+        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FaCKeOiZR8kge.jpg" alt="Foto 8"></div>
+        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F0jWfB2lhDNPG.jpg" alt="Foto 9"></div>
+        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FmUbVWVlTxyo9.jpg" alt="Foto 10"></div>
       </div>
 
       <div class="separator">:: ::</div>
@@ -249,13 +272,6 @@
         “Es difícil en tiempos como estos pensar en ideales, sueños y esperanzas, sólo para ser aplastados por la cruda realidad. Es un milagro que no abandonase todos mis ideales. Sin embargo, me aferro a ellos porque sigo creyendo, a pesar de todo, que la gente es buena de verdad en el fondo de su corazón”
       </div>
 
-      <!-- Fotos 8, 9 y 10 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FaCKeOiZR8kge.jpg" alt="Foto 8"></div>
-        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F0jWfB2lhDNPG.jpg" alt="Foto 9"></div>
-        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2mUbVWVlTxyo9.jpg" alt="Foto 10"></div>
-      </div>
-
       <!-- Fotos 11 y 12 -->
       <div class="photo-row">
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2Fk1hvAKxkplyB.jpg" alt="Foto 11"></div>
@@ -271,7 +287,7 @@
 
       <div class="separator">:: ::</div>
 
-      <!-- Últimas 3 fotos añadidas -->
+      <!-- Fotos 14, 15 y 16 -->
       <div class="photo-row">
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FTqfJqq8CQkwS.jpg" alt="Foto 14"></div>
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F2V7ZnjaEGnd2.jpg" alt="Foto 15"></div>
@@ -280,13 +296,13 @@
 
       <div class="separator">:: ::</div>
 
-      <!-- Frases finales abajo de todo, cerrando el space -->
+      <!-- Bloque final de prosas -->
       <div class="quote-multiline">
         “Le conté mi pasado,<br><br>
         mi presente y mi futuro.<br><br>
         Le susurré mis miedos<br><br>
         y le grité mis sueños.<br><br>
-        Le enseñé todos mis puntos débiles.<br><br>
+        Le enseñé todos mis puntos débil.<br><br>
         Y se fue.”
       </div>
 
