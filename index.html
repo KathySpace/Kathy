@@ -49,18 +49,36 @@
       color: #ffffff;
     }
 
-    .player-box {
-      width: 100%;
+    /* Sección superior compacta: Foto circular + Reproductor */
+    .top-section {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .profile-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      filter: grayscale(20%) contrast(1.1);
+    }
+
+    .player-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .player-title {
-      font-size: 13px;
+      font-size: 12px;
       color: #aaaaaa;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -69,18 +87,18 @@
     .playlist-container {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 6px;
       width: 100%;
-      max-width: 450px;
+      max-width: 320px;
     }
 
     .track-item {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: #0a0a0a;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 8px 12px;
+      padding: 5px 8px;
       cursor: pointer;
       transition: background 0.2s ease, border-color 0.2s ease;
     }
@@ -91,21 +109,22 @@
     }
 
     .track-cover {
-      width: 45px;
-      height: 45px;
+      width: 30px;
+      height: 30px;
       object-fit: cover;
       border: 1px solid rgba(255, 255, 255, 0.3);
       flex-shrink: 0;
     }
 
     .track-info {
-      font-size: 13px;
+      font-size: 11px;
       color: #ffffff;
     }
 
     audio {
       width: 100%;
-      max-width: 450px;
+      max-width: 320px;
+      height: 30px;
       filter: invert(1);
       margin-top: 5px;
     }
@@ -195,31 +214,35 @@
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Reproductor de música -->
-    <div class="player-box">
-      <div class="player-title">Soundtrack</div>
+    <!-- Sección Superior: Foto circular con tu enlace y reproductor compacto -->
+    <div class="top-section">
+      <img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F2V7ZnjaEGnd2.jpg" alt="Perfil" class="profile-circle">
       
-      <div class="playlist-container">
-        <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3')">
-          <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover">
-          <div class="track-info">1. Tiësto - Red Lights</div>
+      <div class="player-box">
+        <div class="player-title">Soundtrack</div>
+        
+        <div class="playlist-container">
+          <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3')">
+            <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover">
+            <div class="track-info">1. Tiësto - Red Lights</div>
+          </div>
+
+          <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3')">
+            <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover">
+            <div class="track-info">2. Elvis Presley - Are You Lonesome Tonight?</div>
+          </div>
+
+          <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3')">
+            <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover">
+            <div class="track-info">3. Loathe - Is It Really You?</div>
+          </div>
         </div>
 
-        <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3')">
-          <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover">
-          <div class="track-info">2. Elvis Presley - Are You Lonesome Tonight?</div>
-        </div>
-
-        <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3')">
-          <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover">
-          <div class="track-info">3. Loathe - Is It Really You?</div>
-        </div>
+        <audio id="main-player" controls>
+          <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
       </div>
-
-      <audio id="main-player" controls>
-        <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-      </audio>
     </div>
 
     <div class="section-title">Sobre Mí</div>
