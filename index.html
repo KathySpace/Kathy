@@ -37,7 +37,7 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Cabecera optimizada para PC y dispositivos móviles */
+    /* Cabecera con el reproductor a la izquierda y el usuario centrado */
     .header-section {
       width: 100%;
       display: flex;
@@ -46,8 +46,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 20px;
       position: relative;
-      flex-wrap: wrap;
-      gap: 15px;
     }
 
     .discreet-player {
@@ -63,7 +61,7 @@
     audio {
       height: 22px;
       filter: invert(1);
-      width: 150px;
+      width: 160px;
     }
 
     .next-arrow-btn {
@@ -87,26 +85,6 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-    }
-
-    /* Ajuste responsivo para celulares para evitar que se encimen */
-    @media (max-width: 768px) {
-      .header-section {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        gap: 15px;
-      }
-      .username {
-        position: static;
-        transform: none;
-        order: 1;
-        text-align: center;
-      }
-      .discreet-player {
-        order: 2;
-      }
     }
 
     .section-title {
@@ -212,7 +190,7 @@
 
   <div class="space-container">
     
-    <!-- Cabecera adaptada -->
+    <!-- Cabecera con reproductor interactivo a la izquierda y usuario en el centro -->
     <div class="header-section">
       <div class="discreet-player">
         <audio id="main-player" controls>
@@ -224,7 +202,7 @@
 
       <div class="username">Goondwanaa (1507609291)</div>
       
-      <div style="width: 1px;" class="desktop-spacer"></div>
+      <div style="width: 1px;"></div>
     </div>
 
     <div class="section-title">Sobre Mí</div>
@@ -372,7 +350,7 @@
   <script>
     const playlist = [
       'Loathe - Is It Really You.mp3',
-      'Otra canción opcional.mp3'
+      'Otra canción opcional.mp3' // Puedes agregar más rutas de canciones aquí si lo deseas
     ];
     let currentIndex = 0;
 
