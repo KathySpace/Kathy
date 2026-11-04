@@ -34,6 +34,7 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .header-info {
@@ -49,25 +50,28 @@
       color: #ffffff;
     }
 
-    /* Sección superior compacta: Foto circular + Reproductor */
+    /* Sección superior con la foto de perfil esquinada y alineada con la lista */
     .top-section {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 30px;
+      justify-content: flex-start;
+      gap: 35px;
       width: 100%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 25px;
+      padding-left: 20px;
       flex-wrap: wrap;
     }
 
     .profile-circle {
-      width: 110px;
-      height: 110px;
+      width: 115px;
+      height: 115px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.4);
       filter: grayscale(20%) contrast(1.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .player-box {
@@ -75,13 +79,15 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
+      flex-grow: 1;
+      max-width: 340px;
     }
 
     .player-title {
       font-size: 12px;
       color: #aaaaaa;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
 
     .playlist-container {
@@ -89,7 +95,6 @@
       flex-direction: column;
       gap: 6px;
       width: 100%;
-      max-width: 320px;
     }
 
     .track-item {
@@ -123,7 +128,6 @@
 
     audio {
       width: 100%;
-      max-width: 320px;
       height: 30px;
       filter: invert(1);
       margin-top: 5px;
@@ -190,6 +194,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .photo-frame img {
@@ -203,6 +208,31 @@
     .photo-frame img:hover {
       filter: none;
     }
+
+    /* Animación de luces Neón Azul Oscuro / Rojo al reproducir música */
+    @keyframes neonPulse {
+      0% {
+        border-color: #002244;
+        box-shadow: 0 0 15px #001133, inset 0 0 5px #001133;
+      }
+      50% {
+        border-color: #880015;
+        box-shadow: 0 0 25px #aa0000, inset 0 0 10px #aa0000;
+      }
+      100% {
+        border-color: #002244;
+        box-shadow: 0 0 15px #001133, inset 0 0 5px #001133;
+      }
+    }
+
+    body.playing .space-container {
+      animation: neonPulse 2.5s infinite ease-in-out;
+    }
+
+    body.playing .photo-frame,
+    body.playing .profile-circle {
+      animation: neonPulse 2.5s infinite ease-in-out;
+    }
   </style>
 </head>
 <body>
@@ -214,12 +244,12 @@
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Sección Superior: Foto circular con tu enlace y reproductor compacto -->
+    <!-- Sección Superior: Foto circular esquinada + Playlist -->
     <div class="top-section">
       <img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F2V7ZnjaEGnd2.jpg" alt="Perfil" class="profile-circle">
       
       <div class="player-box">
-        <div class="player-title">Soundtrack</div>
+        <div class="player-title">Playlist</div>
         
         <div class="playlist-container">
           <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3')">
@@ -388,13 +418,26 @@
   </div>
 
   <script>
+    const player = document.getElementById('main-player');
+    const source = document.getElementById('audio-source');
+
     function playSong(songFile) {
-      const player = document.getElementById('main-player');
-      const source = document.getElementById('audio-source');
       source.src = songFile;
       player.load();
       player.play();
     }
+
+    player.addEventListener('play', () => {
+      document.body.classList.add('playing');
+    });
+
+    player.addEventListener('pause', () => {
+      document.body.classList.remove('playing');
+    });
+
+    player.addEventListener('ended', () => {
+      document.body.classList.remove('playing');
+    });
   </script>
 
 </body>
