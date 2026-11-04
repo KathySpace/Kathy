@@ -61,7 +61,14 @@
     audio {
       height: 22px;
       filter: invert(1);
-      width: 160px;
+      width: 130px;
+    }
+
+    /* Ocultar el control de volumen nativo para dejar espacio a la barra de recorrido */
+    audio::-webkit-media-controls-mute-button,
+    audio::-webkit-media-controls-volume-slider-container,
+    audio::-webkit-media-controls-volume-slider {
+      display: none !important;
     }
 
     .next-arrow-btn {
@@ -87,7 +94,7 @@
       transform: translateX(-50%);
     }
 
-    /* Adaptación limpia para celulares para evitar que se mezclen textos */
+    /* Adaptación limpia para celulares */
     @media (max-width: 768px) {
       .space-container {
         padding: 20px 15px;
