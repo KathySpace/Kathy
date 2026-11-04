@@ -71,15 +71,19 @@
       width: 150px;
     }
 
-    /* Barra de progreso interactiva personalizada para recorrer la canción */
+    /* Barra de progreso oculta por defecto, aparece al reproducir */
     .custom-progress-container {
       width: 100%;
       height: 5px;
       background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
       position: relative;
-      display: flex;
+      display: none;
       align-items: center;
+    }
+
+    body.playing .custom-progress-container {
+      display: flex;
     }
 
     .custom-progress-fill {
@@ -190,6 +194,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       filter: grayscale(20%) contrast(1.1);
       transition: filter 0.3s ease;
     }
@@ -374,8 +379,6 @@
       <div class="quote-box">
         “Y cuando te hayas consolado (uno siempre termina por consolarse) te alegrarás de haberme conocido”
       </div>
-
-      <div class="separator">. .</div>
 
       <div class="quote-box" style="text-align: right; width: 100%; padding-right: 20px;">
         “Iré a casa a ver a mi madre, necesito un abrazo” ツ
