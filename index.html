@@ -50,28 +50,16 @@
       color: #ffffff;
     }
 
-    /* Sección superior con la foto de perfil esquinada y alineada con la lista */
+    /* Sección superior: Playlist a un lado y Disco de Vinilo Giratorio al otro */
     .top-section {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 35px;
+      justify-content: center;
+      gap: 40px;
       width: 100%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 25px;
-      padding-left: 20px;
       flex-wrap: wrap;
-    }
-
-    .profile-circle {
-      width: 115px;
-      height: 115px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      filter: grayscale(20%) contrast(1.1);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     .player-box {
@@ -79,7 +67,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
-      flex-grow: 1;
       max-width: 340px;
     }
 
@@ -113,7 +100,7 @@
       border-color: rgba(255, 255, 255, 0.5);
     }
 
-    .track-cover {
+    .track-cover-thumb {
       width: 30px;
       height: 30px;
       object-fit: cover;
@@ -131,6 +118,47 @@
       height: 30px;
       filter: invert(1);
       margin-top: 5px;
+    }
+
+    /* Estilos del Disco de Vinilo */
+    .vinyl-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vinyl-disc {
+      width: 140px;
+      height: 140px;
+      background: #111111;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      /* Surcos simulados del vinilo */
+      background-image: repeating-radial-gradient(#111, #111 4px, #222 5px, #111 6px);
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .vinyl-center-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes spinVinyl {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    body.playing .vinyl-disc {
+      animation: spinVinyl 3s linear infinite, neonPulse 2.5s infinite ease-in-out;
     }
 
     .section-title {
@@ -229,8 +257,7 @@
       animation: neonPulse 2.5s infinite ease-in-out;
     }
 
-    body.playing .photo-frame,
-    body.playing .profile-circle {
+    body.playing .photo-frame {
       animation: neonPulse 2.5s infinite ease-in-out;
     }
   </style>
@@ -244,26 +271,24 @@
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Sección Superior: Foto circular esquinada + Playlist -->
+    <!-- Sección Superior: Playlist + Disco de Vinilo Giratorio -->
     <div class="top-section">
-      <img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F2V7ZnjaEGnd2.jpg" alt="Perfil" class="profile-circle">
-      
       <div class="player-box">
         <div class="player-title">Playlist</div>
         
         <div class="playlist-container">
-          <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3')">
-            <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover">
+          <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3', 'https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg')">
+            <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover-thumb">
             <div class="track-info">1. Tiësto - Red Lights</div>
           </div>
 
-          <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3')">
-            <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover">
+          <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3', 'https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg')">
+            <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover-thumb">
             <div class="track-info">2. Elvis Presley - Are You Lonesome Tonight?</div>
           </div>
 
-          <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3')">
-            <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover">
+          <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3', 'https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg')">
+            <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover-thumb">
             <div class="track-info">3. Loathe - Is It Really You?</div>
           </div>
         </div>
@@ -272,6 +297,12 @@
           <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
           Tu navegador no soporta el elemento de audio.
         </audio>
+      </div>
+
+      <div class="vinyl-container">
+        <div class="vinyl-disc">
+          <img id="vinyl-cover" src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Portada Vinilo" class="vinyl-center-img">
+        </div>
       </div>
     </div>
 
@@ -420,9 +451,11 @@
   <script>
     const player = document.getElementById('main-player');
     const source = document.getElementById('audio-source');
+    const vinylCover = document.getElementById('vinyl-cover');
 
-    function playSong(songFile) {
+    function playSong(songFile, coverImg) {
       source.src = songFile;
+      vinylCover.src = coverImg;
       player.load();
       player.play();
     }
