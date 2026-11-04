@@ -37,128 +37,47 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    .header-info {
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    /* Cabecera limpia con el usuario y el reproductor discreto en la zona indicada */
+    .header-section {
       width: 100%;
-      padding-bottom: 15px;
-    }
-
-    .username {
-      font-size: 17px;
-      letter-spacing: 1px;
-      color: #ffffff;
-    }
-
-    /* Sección superior: Playlist a un lado y Disco de Vinilo Giratorio al otro */
-    .top-section {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 40px;
-      width: 100%;
+      justify-content: space-between;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 25px;
-      flex-wrap: wrap;
+      padding-bottom: 20px;
     }
 
-    .player-box {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      max-width: 340px;
-    }
-
-    .player-title {
-      font-size: 12px;
-      color: #aaaaaa;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .playlist-container {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      width: 100%;
-    }
-
-    .track-item {
+    .discreet-player {
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    audio {
+      height: 25px;
+      filter: invert(1);
+      width: 180px;
+    }
+
+    .next-track-btn {
       background: #0a0a0a;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 4px 8px;
+      font-size: 11px;
       cursor: pointer;
       transition: background 0.2s ease, border-color 0.2s ease;
     }
 
-    .track-item:hover {
-      background: #151515;
-      border-color: rgba(255, 255, 255, 0.5);
+    .next-track-btn:hover {
+      background: #222222;
+      border-color: rgba(255, 255, 255, 0.6);
     }
 
-    .track-cover-thumb {
-      width: 30px;
-      height: 30px;
-      object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      flex-shrink: 0;
-    }
-
-    .track-info {
-      font-size: 11px;
+    .username {
+      font-size: 15px;
+      letter-spacing: 1px;
       color: #ffffff;
-    }
-
-    audio {
-      width: 100%;
-      height: 30px;
-      filter: invert(1);
-      margin-top: 5px;
-    }
-
-    /* Estilos del Disco de Vinilo */
-    .vinyl-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .vinyl-disc {
-      width: 140px;
-      height: 140px;
-      background: #111111;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-      /* Surcos simulados del vinilo */
-      background-image: repeating-radial-gradient(#111, #111 4px, #222 5px, #111 6px);
-      transition: border-color 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .vinyl-center-img {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-
-    @keyframes spinVinyl {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    body.playing .vinyl-disc {
-      animation: spinVinyl 3s linear infinite, neonPulse 2.5s infinite ease-in-out;
     }
 
     .section-title {
@@ -237,28 +156,28 @@
       filter: none;
     }
 
-    /* Animación de luces Neón Azul Oscuro / Rojo al reproducir música */
-    @keyframes neonPulse {
+    /* Animación de luces Neón Exclusivamente Roja al reproducir música */
+    @keyframes redNeonPulse {
       0% {
-        border-color: #002244;
-        box-shadow: 0 0 15px #001133, inset 0 0 5px #001133;
+        border-color: #330000;
+        box-shadow: 0 0 15px #550000, inset 0 0 5px #550000;
       }
       50% {
-        border-color: #880015;
-        box-shadow: 0 0 25px #aa0000, inset 0 0 10px #aa0000;
+        border-color: #aa0000;
+        box-shadow: 0 0 30px #ff0000, inset 0 0 12px #ff0000;
       }
       100% {
-        border-color: #002244;
-        box-shadow: 0 0 15px #001133, inset 0 0 5px #001133;
+        border-color: #330000;
+        box-shadow: 0 0 15px #550000, inset 0 0 5px #550000;
       }
     }
 
     body.playing .space-container {
-      animation: neonPulse 2.5s infinite ease-in-out;
+      animation: redNeonPulse 2.5s infinite ease-in-out;
     }
 
     body.playing .photo-frame {
-      animation: neonPulse 2.5s infinite ease-in-out;
+      animation: redNeonPulse 2.5s infinite ease-in-out;
     }
   </style>
 </head>
@@ -266,44 +185,16 @@
 
   <div class="space-container">
     
-    <!-- Encabezado -->
-    <div class="header-info">
-      <div class="username">Goondwanaa (1507609291)</div>
-    </div>
-
-    <!-- Sección Superior: Playlist + Disco de Vinilo Giratorio -->
-    <div class="top-section">
-      <div class="player-box">
-        <div class="player-title">Playlist</div>
-        
-        <div class="playlist-container">
-          <div class="track-item" onclick="playSong('Tiësto - Red Lights.mp3', 'https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg')">
-            <img src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Tiësto" class="track-cover-thumb">
-            <div class="track-info">1. Tiësto - Red Lights</div>
-          </div>
-
-          <div class="track-item" onclick="playSong('Elvis Presley - Are You Lonesome Tonight.mp3', 'https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg')">
-            <img src="https://i.postimg.cc/0y4KGhjV/250x250-000000-80-0-0-(1).jpg" alt="Elvis Presley" class="track-cover-thumb">
-            <div class="track-info">2. Elvis Presley - Are You Lonesome Tonight?</div>
-          </div>
-
-          <div class="track-item" onclick="playSong('Loathe - Is It Really You.mp3', 'https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg')">
-            <img src="https://i.postimg.cc/d3nLhxgG/250x250-000000-80-0-0-(2).jpg" alt="Loathe" class="track-cover-thumb">
-            <div class="track-info">3. Loathe - Is It Really You?</div>
-          </div>
-        </div>
-
+    <!-- Cabecera con reproductor discreto (ubicado en el área verde) y usuario -->
+    <div class="header-section">
+      <div class="discreet-player">
         <audio id="main-player" controls>
           <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
           Tu navegador no soporta el elemento de audio.
         </audio>
+        <button class="next-track-btn" onclick="nextSong()">Siguiente &gt;&gt;</button>
       </div>
-
-      <div class="vinyl-container">
-        <div class="vinyl-disc">
-          <img id="vinyl-cover" src="https://i.postimg.cc/C1k8xJh0/250x250-000000-80-0-0.jpg" alt="Portada Vinilo" class="vinyl-center-img">
-        </div>
-      </div>
+      <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
     <div class="section-title">Sobre Mí</div>
@@ -449,26 +340,32 @@
   </div>
 
   <script>
+    const playlist = [
+      'Tiësto - Red Lights.mp3',
+      'Elvis Presley - Are You Lonesome Tonight.mp3',
+      'Loathe - Is It Really You.mp3'
+    ];
+    let currentIndex = 0;
+
     const player = document.getElementById('main-player');
     const source = document.getElementById('audio-source');
-    const vinylCover = document.getElementById('vinyl-cover');
 
-    function playSong(songFile, coverImg) {
-      source.src = songFile;
-      vinylCover.src = coverImg;
+    function nextSong() {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      source.src = playlist[currentIndex];
       player.load();
       player.play();
     }
+
+    player.addEventListener('ended', () => {
+      nextSong();
+    });
 
     player.addEventListener('play', () => {
       document.body.classList.add('playing');
     });
 
     player.addEventListener('pause', () => {
-      document.body.classList.remove('playing');
-    });
-
-    player.addEventListener('ended', () => {
       document.body.classList.remove('playing');
     });
   </script>
