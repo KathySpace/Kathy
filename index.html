@@ -37,7 +37,7 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Cabecera con el reproductor a la izquierda y el usuario centrado */
+    /* Cabecera con reproductor a la izquierda y usuario centrado */
     .header-section {
       width: 100%;
       display: flex;
@@ -87,7 +87,7 @@
       transform: translateX(-50%);
     }
 
-    /* Adaptación móvil manteniendo la estructura intacta y sin encimar */
+    /* Adaptación limpia para celulares para evitar que se mezclen textos */
     @media (max-width: 768px) {
       .space-container {
         padding: 20px 15px;
@@ -159,8 +159,7 @@
       justify-content: center;
       gap: 18px;
       width: 100%;
-      /* Evita que se bajen las fotos en celular y fuerza que conserven sus filas */
-      flex-wrap: nowrap; 
+      flex-wrap: wrap;
     }
 
     .photo-frame {
@@ -173,7 +172,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      flex-shrink: 1; /* Permite que se reduzcan proporcionalmente en pantallas chicas sin salirse */
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
