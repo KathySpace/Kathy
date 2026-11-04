@@ -37,7 +37,7 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Cabecera con el reproductor centrado y el usuario a la derecha */
+    /* Cabecera con el reproductor a la izquierda y el usuario centrado */
     .header-section {
       width: 100%;
       display: flex;
@@ -52,9 +52,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       background: #0a0a0a;
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 6px 12px;
@@ -85,7 +82,9 @@
       font-size: 15px;
       letter-spacing: 1px;
       color: #ffffff;
-      margin-left: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .section-title {
@@ -191,10 +190,8 @@
 
   <div class="space-container">
     
-    <!-- Cabecera con reproductor centrado (con flecha) y usuario -->
+    <!-- Cabecera con reproductor a la izquierda y usuario en el centro -->
     <div class="header-section">
-      <div style="width: 1px;"></div> <!-- Elemento de equilibrio flexible -->
-      
       <div class="discreet-player">
         <audio id="main-player" controls>
           <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
@@ -204,6 +201,8 @@
       </div>
 
       <div class="username">Goondwanaa (1507609291)</div>
+      
+      <div style="width: 1px;"></div> <!-- Equilibrador derecho -->
     </div>
 
     <div class="section-title">Sobre Mí</div>
