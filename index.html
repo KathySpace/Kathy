@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katherine “Enigmática”</title>
+  <title>Goondwanaa Space</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Courier New", Courier, monospace; /* Estilo máquina de escribir */
+      font-family: "Courier New", Courier, monospace;
     }
 
     body {
@@ -24,10 +24,10 @@
 
     .space-container {
       width: 100%;
-      max-width: 650px;
+      max-width: 850px;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 30px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+      padding: 40px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
       background: #000000;
       display: flex;
       flex-direction: column;
@@ -43,9 +43,32 @@
     }
 
     .username {
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 1px;
-      color: #d1d1d1;
+      color: #cccccc;
+    }
+
+    .player-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .player-title {
+      font-size: 11px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 400px;
+      filter: invert(1);
     }
 
     .section-title {
@@ -60,8 +83,9 @@
     .separator {
       color: #666;
       letter-spacing: 3px;
-      margin: 10px 0;
+      margin: 15px 0;
       font-size: 12px;
+      text-align: center;
     }
 
     .quote-box {
@@ -72,7 +96,14 @@
       padding: 0 10px;
     }
 
-    /* Galería de fotos al estilo clásico */
+    .quote-multiline {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #cccccc;
+      padding: 0 10px;
+    }
+
     .photo-grid {
       display: flex;
       flex-direction: column;
@@ -84,7 +115,7 @@
     .photo-row {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       width: 100%;
       flex-wrap: wrap;
     }
@@ -93,8 +124,8 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 6px;
       background: #0a0a0a;
-      width: 180px;
-      height: 220px;
+      width: 210px;
+      height: 260px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -112,124 +143,163 @@
     .photo-frame img:hover {
       filter: none;
     }
-
-    /* Reproductor de música retro */
-    .player-box {
-      width: 100%;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .player-title {
-      font-size: 12px;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    audio {
-      width: 100%;
-      filter: invert(1); /* Da un toque oscuro al reproductor nativo */
-    }
   </style>
 </head>
 <body>
 
   <div class="space-container">
     
-    <!-- Encabezado -->
+    <!-- Encabezado con el nombre de usuario -->
     <div class="header-info">
-      <div class="username">Katherine “Enigmática”</div>
-      <div class="section-title">Sobre Mí</div>
+      <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
-    <!-- Frase principal -->
-    <div class="quote-box">
-      “Tengo la bonita sensación de que no estaré aquí por mucho tiempo, así que riamos un poco más antes de irnos”
-    </div>
-
-    <div class="separator">:: ::</div>
-
-    <!-- Fila de fotos 1 y 2 -->
-    <div class="photo-grid">
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/oqSmL2djLLar.jpg" alt="Foto 1"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/kJdgMDdLGDIu.jpg" alt="Foto 2"></div>
-      </div>
-
-      <div class="quote-box">
-        “Conlleva elegancia seguir siendo amable en situaciones crueles”
-      </div>
-
-      <div class="separator">:: ::</div>
-
-      <!-- Fila de fotos 3 y 4 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/5ij8D4nQatRJ.jpg" alt="Foto 3"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/1KCAizqfdL3D.jpg" alt="Foto 4"></div>
-      </div>
-
-      <div class="quote-box">
-        “La soledad se enamora de mí y yo de ella, pero no sé... aún preparo cena para dos por si, de pronto, el amor regresa”
-      </div>
-
-      <div class="separator">:: ::</div>
-
-      <!-- Fila de fotos 5 y 6 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/3GdOGG8nQyKd.jpg" alt="Foto 5"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/t8aFKtnYyMLd.jpg" alt="Foto 6"></div>
-      </div>
-
-      <div class="quote-box">
-        “No llores por mí, no te apenes por mí... Lee lo que dejo escrito y luego olvídalo todo”
-      </div>
-
-      <div class="separator">:: ::</div>
-
-      <!-- Fila de fotos 7 y 8 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/yCGWR50w9Pu7.jpg" alt="Foto 7"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/idl2pbuTV00U.jpg" alt="Foto 8"></div>
-      </div>
-
-      <div class="quote-box">
-        “No cambies de número, ojitos. Quizá en unos años necesite decirte que nunca te olvidé”
-      </div>
-
-      <div class="separator">:: ::</div>
-
-      <!-- Fila de fotos 9 y 10 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/njakwhNXR4gf.jpg" alt="Foto 9"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/fXHk1ab0Wgg7.jpg" alt="Foto 10"></div>
-      </div>
-
-      <div class="quote-box">
-        “Es difícil en tiempos como estos pensar en ideales, sueños y esperanzas, sólo para ser aplastados por la cruda realidad”
-      </div>
-
-      <div class="separator">:: ::</div>
-
-      <!-- Fila de fotos 11, 12 y 13 -->
-      <div class="photo-row">
-        <div class="photo-frame"><img src="https://xatimg.com/image/MMQ6fwd74ARx.jpg" alt="Foto 11"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/mvVPpaAtH0ns.jpg" alt="Foto 12"></div>
-        <div class="photo-frame"><img src="https://xatimg.com/image/uIdsfvxloSAs.jpg" alt="Foto 13"></div>
-      </div>
-    </div>
-
-    <!-- Reproductor de Música -->
+    <!-- Reproductor de música arriba -->
     <div class="player-box">
       <div class="player-title">Soundtrack</div>
       <audio controls>
         <source src="cancion.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
       </audio>
+    </div>
+
+    <div class="section-title">Sobre Mí</div>
+
+    <!-- Bloque 1 de frases e imágenes -->
+    <div class="quote-box">
+      “Tengo la bonita sensación de que no estaré aquí por mucho tiempo, así que riamos un poco más antes de irnos”
+    </div>
+
+    <div class="separator">:: ::</div>
+
+    <div class="quote-box">
+      “Conlleva elegancia seguir siendo amable en situaciones crueles”
+    </div>
+
+    <div class="separator">:: ::</div>
+
+    <div class="photo-grid">
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/eEfMVBZD7k1t.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/oqSmL2djLLar.jpg" alt="Foto"></div>
+      </div>
+
+      <div class="quote-box">
+        “Nada tenía de malo, y nada tenía de raro, qué se me hubiera roto el corazón de tanto usarlo”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “La soledad se enamora de mí y yo de ella, pero no sé.. aún preparo cena para dos por si, de pronto, el amor regresa..”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/kJdgMDdLGDIu.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/5ij8D4nQatRJ.jpg" alt="Foto"></div>
+      </div>
+
+      <div class="quote-box">
+        “No llores por mí, no te apenes por mí...<br>Lee lo que dejo escrito y luego olvídalo todo”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Imagíname: no puedo existir si no me imaginas”
+      </div>
+
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/1KCAizqfdL3D.jpg" alt="Foto"><span style="position: absolute; font-size:10px; color:#888; bottom: 5px; right: 8px;">Beep-Beep, Richie!</span></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/3GdOGG8nQyKd.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/t8aFKtnYyMLd.jpg" alt="Foto"></div>
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Es difícil en tiempos como estos pensar en ideales, sueños y esperanzas, sólo para ser aplastados por la cruda realidad. Es un milagro que no abandonase todos mis ideales. Sin embargo, me aferro a ellos porque sigo creyendo, a pesar de todo, que la gente es buena de verdad en el fondo de su corazón”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “_No quiero que me hagas el amor_ susurró, besándome el cuello_. Quiero que me abraces, que me des calor y que me quites el miedo que siento. Me estoy muriendo de terror”
+      </div>
+
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/yCGWR50w9Pu7.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/idl2pbuTV00U.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/njakwhNXR4gf.jpg" alt="Foto"></div>
+      </div>
+
+      <div class="quote-box">
+        “_- No cambies de número, -ojitos tristes-. Quizá en unos años necesite decirte que nunca te olvidé”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “He intentado no pensar demasiado. He intentado ser natural”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Yo creo que nada sucede por casualidad. ¿Sabes qué? En el fondo las cosas tienen su plan secreto, aunque nosotros no lo entendamos”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Hay una sola regla que necesitas recordar: ríete de todo y olvídate de todos. Suena egoísta, pero de hecho, es la única cura para los que sufren de autocompasión”
+      </div>
+
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/fXHk1ab0Wgg7.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/MMQ6fwd74ARx.jpg" alt="Foto"></div>
+        <div class="photo-frame"><img src="https://xatimg.com/image/mvVPpaAtH0ns.jpg" alt="Foto"></div>
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <!-- Último bloque de texto con el formato exacto que mostraste -->
+      <div class="quote-multiline">
+        “Le conté mi pasado,<br><br>
+        mi presente y mi futuro.<br><br>
+        Le susurré mis miedos<br><br>
+        y le grité mis sueños.<br><br>
+        Le enseñé todos mis puntos débiles.<br><br>
+        Y se fue.”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Lo único que lamento es que nunca tendré tiempo de leer todos los libros que quiero leer”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box">
+        “Y cuando te hayas consolado (uno siempre termina por consolarse) te alegrarás de haberme conocido”
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <div class="quote-box" style="text-align: right; width: 100%; padding-right: 20px;">
+        “Iré a casa a ver a mi madre, necesito un abrazo” ツ
+      </div>
+
+      <div class="separator">:: ::</div>
+
+      <!-- Última foto individual como en tus capturas -->
+      <div class="photo-row">
+        <div class="photo-frame"><img src="https://xatimg.com/image/uIdsfvxloSAs.jpg" alt="Foto"></div>
+      </div>
+
     </div>
 
   </div>
