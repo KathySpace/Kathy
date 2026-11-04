@@ -37,7 +37,7 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Cabecera limpia con el usuario y el reproductor discreto en la zona indicada */
+    /* Cabecera con el reproductor centrado y el usuario a la derecha */
     .header-section {
       width: 100%;
       display: flex;
@@ -45,39 +45,47 @@
       justify-content: space-between;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 20px;
+      position: relative;
     }
 
     .discreet-player {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 12px;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
     audio {
-      height: 25px;
+      height: 22px;
       filter: invert(1);
-      width: 180px;
+      width: 160px;
     }
 
-    .next-track-btn {
-      background: #0a0a0a;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .next-arrow-btn {
+      background: transparent;
+      border: none;
       color: #ffffff;
-      padding: 4px 8px;
-      font-size: 11px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      padding: 0 4px;
+      transition: color 0.2s ease;
     }
 
-    .next-track-btn:hover {
-      background: #222222;
-      border-color: rgba(255, 255, 255, 0.6);
+    .next-arrow-btn:hover {
+      color: #ff0000;
     }
 
     .username {
       font-size: 15px;
       letter-spacing: 1px;
       color: #ffffff;
+      margin-left: auto;
     }
 
     .section-title {
@@ -156,7 +164,7 @@
       filter: none;
     }
 
-    /* Animación de luces Neón Exclusivamente Roja al reproducir música */
+    /* Animación de luces Neón Roja al reproducir música */
     @keyframes redNeonPulse {
       0% {
         border-color: #330000;
@@ -172,11 +180,9 @@
       }
     }
 
-    body.playing .space-container {
-      animation: redNeonPulse 2.5s infinite ease-in-out;
-    }
-
-    body.playing .photo-frame {
+    body.playing .space-container,
+    body.playing .photo-frame,
+    body.playing .discreet-player {
       animation: redNeonPulse 2.5s infinite ease-in-out;
     }
   </style>
@@ -185,15 +191,18 @@
 
   <div class="space-container">
     
-    <!-- Cabecera con reproductor discreto (ubicado en el área verde) y usuario -->
+    <!-- Cabecera con reproductor centrado (con flecha) y usuario -->
     <div class="header-section">
+      <div style="width: 1px;"></div> <!-- Elemento de equilibrio flexible -->
+      
       <div class="discreet-player">
         <audio id="main-player" controls>
           <source id="audio-source" src="Tiësto - Red Lights.mp3" type="audio/mpeg">
           Tu navegador no soporta el elemento de audio.
         </audio>
-        <button class="next-track-btn" onclick="nextSong()">Siguiente &gt;&gt;</button>
+        <button class="next-arrow-btn" onclick="nextSong()">&gt;</button>
       </div>
+
       <div class="username">Goondwanaa (1507609291)</div>
     </div>
 
