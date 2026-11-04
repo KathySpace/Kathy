@@ -37,7 +37,7 @@
       transition: border-color 0.5s ease, box-shadow 0.5s ease;
     }
 
-    /* Cabecera con reproductor a la izquierda y usuario centrado */
+    /* Cabecera optimizada con reproductor a la izquierda y usuario centrado */
     .header-section {
       width: 100%;
       display: flex;
@@ -61,14 +61,7 @@
     audio {
       height: 22px;
       filter: invert(1);
-      width: 130px;
-    }
-
-    /* Ocultar el control de volumen nativo para dejar espacio a la barra de recorrido */
-    audio::-webkit-media-controls-mute-button,
-    audio::-webkit-media-controls-volume-slider-container,
-    audio::-webkit-media-controls-volume-slider {
-      display: none !important;
+      width: 160px;
     }
 
     .next-arrow-btn {
@@ -94,7 +87,7 @@
       transform: translateX(-50%);
     }
 
-    /* Adaptación limpia para celulares */
+    /* Adaptación limpia para celulares sin encimar textos */
     @media (max-width: 768px) {
       .space-container {
         padding: 20px 15px;
@@ -286,7 +279,7 @@
       <div class="photo-row">
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2F26Q4G8Y5Uyay.jpg" alt="Foto 5"></div>
         <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2FsFDGeotLV2Ge.jpg" alt="Foto 6"></div>
-        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=-1&q=90&url=https%3A%2F%2Fxatimg.com%2Fimage%2Fl0i5vA9X8j1Z.jpg" alt="Foto 7"></div>
+        <div class="photo-frame"><img src="https://wsrv.nl/?h=0&n=%2Fimage%2Fl0i5vA9X8j1Z.jpg" alt="Foto 7"></div>
       </div>
 
       <div class="separator">. .</div>
